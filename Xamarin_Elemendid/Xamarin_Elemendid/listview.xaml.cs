@@ -14,9 +14,22 @@ namespace Xamarin_Elemendid
     {
         public listview()
         {
-            ListView listView1 = new ListView();
-            
-            
+            StackLayout stack = new StackLayout();
+            var listView1 = new ListView();
+            listView1.ItemsSource = new string[]
+            {
+              "mono",
+              "monodroid",
+              "monotouch",
+              "monorail",
+              "monodevelop",
+              "monotone",
+              "monopoly",
+              "monomodal",
+              "mononucleosis"
+            };
+            stack.Children.Add(listView1);
+            Content = stack;
 
         }
     }

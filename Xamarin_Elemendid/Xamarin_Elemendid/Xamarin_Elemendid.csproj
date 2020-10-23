@@ -28,7 +28,7 @@
     <EmbeddedResource Update="tableview.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="timer.xaml">
+    <EmbeddedResource Update="timer_.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="webview.xaml">

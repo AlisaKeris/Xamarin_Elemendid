@@ -29,7 +29,7 @@ namespace Xamarin_Elemendid
             t_btn.Clicked += T_btn_Clicked;
             w_btn.Clicked += W_btn_Clicked;
             ti_btn.Clicked += Ti_btn_Clicked;
-            StackLayout stack = new StackLayout();
+            StackLayout stack = new StackLayout(); 
             stack.Children.Add(e_btn);
             stack.Children.Add(l_btn);
             stack.Children.Add(d_btn);
@@ -41,7 +41,7 @@ namespace Xamarin_Elemendid
 
         private async void Ti_btn_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new timer());
+            await Navigation.PushAsync(new timer_());
         }
 
         private async void W_btn_Clicked(object sender, EventArgs e)
