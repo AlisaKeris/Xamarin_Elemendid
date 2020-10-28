@@ -14,18 +14,37 @@ namespace Xamarin_Elemendid
     {
         public tableview()
         {
-            Content = new TableView
+            this.Content = new TableView
             {
-                Root = new TableRoot
+                Intent = TableIntent.Form,
+                Root = new TableRoot("Ввод данных")
             {
-                new TableSection("Ring")
+                new TableSection ("Персональные данные")
                 {
-                  // TableSection constructor takes title as an optional parameter
-                  new SwitchCell { Text = "New Voice Mail" },
-                  new SwitchCell { Text = "New Mail", On = true }
+                    new EntryCell
+                    {
+                        Label = "Логин:",
+                        Placeholder = "введите логин",
+                        Keyboard = Keyboard.Default
+                    },
+                    new SwitchCell { Text = "Сохранить"}
+                },
+                new TableSection ("Контакты")
+                {
+                    new EntryCell
+                    {
+                        Label = "Телефон:",
+                        Placeholder = "введите телефон",
+                        Keyboard = Keyboard.Telephone
+                    },
+                    new EntryCell
+                    {
+                        Label = "Email:",
+                        Placeholder = "введите email",
+                        Keyboard = Keyboard.Email
+                    }
                 }
-            },
-                Intent = TableIntent.Settings
+            }
             };
         }
     }
