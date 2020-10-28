@@ -15,14 +15,21 @@ namespace Xamarin_Elemendid
         public entryeditor()
         {
             StackLayout stack = new StackLayout();
+            Entry entry = new Entry
+            {
+                MaxLength = 10,
+                CharacterSpacing = 5,
+                IsPassword = true
+            };
             Editor editor = new Editor
             {
-                Text = "Text",
-                CharacterSpacing = 5
+                CharacterSpacing = 5,
+                Placeholder = "Enter text here", PlaceholderColor = Color.Olive,
+                MaxLength = 10
             };
             stack.Children.Add(editor);
+            stack.Children.Add(entry);
             Content = stack;
-
         }
     }
 }
