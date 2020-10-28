@@ -19,7 +19,9 @@ namespace Xamarin_Elemendid
             {
                 MaxLength = 10,
                 CharacterSpacing = 5,
-                IsPassword = true
+                IsPassword = true,
+                Placeholder = "Password",
+                PlaceholderColor = Color.Olive,
             };
             Editor editor = new Editor
             {
