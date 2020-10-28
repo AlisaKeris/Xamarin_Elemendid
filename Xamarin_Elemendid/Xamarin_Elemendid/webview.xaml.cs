@@ -26,9 +26,9 @@ namespace Xamarin_Elemendid
                 };
                 webView = new WebView
                 {
-                    Source = new UrlWebViewSource { Url = "http://blog.xamarin.com/" },
+                    Source = new UrlWebViewSource { Url = "https://github.com/AlisaKrupenko" },
                     // или так
-                    // Source = "http://blog.xamarin.com/",
+                    // Source = "https://github.com/AlisaKrupenko",
                     VerticalOptions = LayoutOptions.FillAndExpand
                 };
 
