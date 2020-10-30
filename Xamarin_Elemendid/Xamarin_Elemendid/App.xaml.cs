@@ -11,7 +11,7 @@ namespace Xamarin_Elemendid
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage())
-            { BackgroundColor = Color.BurlyWood};
+            { BackgroundColor = Color.CadetBlue};
         }
 
         protected override void OnStart()

@@ -6,29 +6,50 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.Markup;
 
 namespace Xamarin_Elemendid
 {
     public partial class MainPage : ContentPage
     {
-        Button e_btn, l_btn, d_btn, t_btn, w_btn, ti_btn;
+        Button e_btn, l_btn, d_btn, t_btn, w_btn, ti_btn, s_btn;
         public MainPage()
         {
             e_btn = new Button()
             {
-                Text = "Entry/Editor"
+                Text = "Entry/Editor", BorderWidth = 3, BorderColor = Color.DarkBlue, BackgroundColor= Color.LightBlue, 
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
             };
-            l_btn = new Button() { Text="ListView" };
-            d_btn = new Button() { Text= "DataPicker" };
-            t_btn = new Button() { Text = "TableView" };
-            w_btn = new Button() { Text = "WebView"};
-            ti_btn = new Button() { Text="Timer"};
+            s_btn = new Button()
+            {
+                Text = "Stepper",
+                BorderWidth = 3,
+                BorderColor = Color.DarkBlue,
+                BackgroundColor = Color.LightBlue,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+            };
+            l_btn = new Button() { Text="ListView", BorderWidth = 3, BorderColor = Color.DarkBlue, BackgroundColor = Color.LightBlue,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+            };
+            d_btn = new Button() { Text= "DataPicker", BorderWidth = 3, BorderColor = Color.DarkBlue, BackgroundColor = Color.LightBlue,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+            };
+            t_btn = new Button() { Text = "TableView", BorderWidth = 3, BorderColor = Color.DarkBlue, BackgroundColor = Color.LightBlue,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+            };
+            w_btn = new Button() { Text = "WebView", BorderWidth = 3, BorderColor = Color.DarkBlue, BackgroundColor = Color.LightBlue,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+            };
+            ti_btn = new Button() { Text="Timer", BorderWidth = 3, BorderColor = Color.DarkBlue, BackgroundColor = Color.LightBlue,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+            };
             e_btn.Clicked += E_btn_Clicked;
             l_btn.Clicked += L_btn_Clicked;
             d_btn.Clicked += D_btn_Clicked;
             t_btn.Clicked += T_btn_Clicked;
             w_btn.Clicked += W_btn_Clicked;
             ti_btn.Clicked += Ti_btn_Clicked;
+            s_btn.Clicked += S_btn_Clicked;
             StackLayout stack = new StackLayout(); 
             stack.Children.Add(e_btn);
             stack.Children.Add(l_btn);
@@ -36,7 +57,13 @@ namespace Xamarin_Elemendid
             stack.Children.Add(ti_btn);
             stack.Children.Add(t_btn);
             stack.Children.Add(w_btn);
+            stack.Children.Add(s_btn);
             Content = stack;
+        }
+
+        private async void S_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new stepper_());
         }
 
         private async void Ti_btn_Clicked(object sender, EventArgs e)

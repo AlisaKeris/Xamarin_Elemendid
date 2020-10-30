@@ -18,9 +18,7 @@ namespace Xamarin_Elemendid
             StackLayout stack = new StackLayout();
             DatePicker datePicker = new DatePicker()
             {
-                Format = "D",
-                MaximumDate = DateTime.Now.AddDays(5),
-                MinimumDate = DateTime.Now.AddDays(-5)
+                Format = "D"
             };
             datePicker.DateSelected += DatePicker_DateSelected;
             stack.Children.Add(datePicker);

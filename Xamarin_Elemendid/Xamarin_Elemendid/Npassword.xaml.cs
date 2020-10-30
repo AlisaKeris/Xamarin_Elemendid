@@ -10,26 +10,27 @@ using Xamarin.Forms.Xaml;
 namespace Xamarin_Elemendid
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class entryeditor : ContentPage
+    public partial class Npassword : ContentPage
     {
         Button btn;
-        public entryeditor()
+        public Npassword()
         {
             StackLayout stack = new StackLayout();
-            btn = new Button { Text= "Забыли пароль?", BackgroundColor = Color.LightGoldenrodYellow};
-            btn.Clicked += Btn_Clicked;
+            btn = new Button { Text = "Сохранить пароль", BackgroundColor = Color.LightGoldenrodYellow };
+            btn.Clicked += Btn_Clicked; 
             Entry entry = new Entry
             {
                 MaxLength = 10,
                 CharacterSpacing = 5,
                 IsPassword = true,
-                Placeholder = "Пароль",
+                Placeholder = "Новый пароль",
                 PlaceholderColor = Color.DarkMagenta,
             };
             Editor editor = new Editor
             {
                 CharacterSpacing = 5,
-                Placeholder = "Имя", PlaceholderColor = Color.DarkMagenta,
+                Placeholder = "Имя",
+                PlaceholderColor = Color.DarkMagenta,
                 MaxLength = 10
             };
             stack.Children.Add(editor);
@@ -38,14 +39,9 @@ namespace Xamarin_Elemendid
             Content = stack;
         }
 
-        private async void Btn_Clicked(object sender, EventArgs e)
+        private void Btn_Clicked(object sender, EventArgs e)
         {
             
-                bool answer = await DisplayAlert(" ", "Хотите создать новый пароль?", "Да", "Нет");
-            if (answer == true )
-            {
-                await Navigation.PushAsync(new Npassword());
-            }
         }
     }
 }

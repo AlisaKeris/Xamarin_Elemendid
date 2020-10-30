@@ -20,7 +20,10 @@ namespace Xamarin_Elemendid
                 {
                     VerticalOptions = LayoutOptions.Center,
                     HorizontalOptions = LayoutOptions.Center,
-                    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+                    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button)),
+                    BorderWidth = 3,
+                    BorderColor = Color.DarkBlue,
+                    BackgroundColor = Color.LightBlue
                 };
                 timerButton.Clicked += TimerButton_Clicked;
 
