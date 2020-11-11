@@ -39,9 +39,9 @@ namespace Xamarin_Elemendid
             Content = stack;
         }
 
-        private void Btn_Clicked(object sender, EventArgs e)
+        private async void Btn_Clicked(object sender, EventArgs e)
         {
-            
+            bool answer = await DisplayAlert(" ", "Новый пароль сохранен", " ", " ");
         }
     }
 }

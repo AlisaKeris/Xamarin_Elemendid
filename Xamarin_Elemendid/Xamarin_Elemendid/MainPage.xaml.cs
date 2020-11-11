@@ -12,7 +12,7 @@ namespace Xamarin_Elemendid
 {
     public partial class MainPage : ContentPage
     {
-        Button e_btn, l_btn, d_btn, t_btn, w_btn, ti_btn, s_btn;
+        Button e_btn, l_btn, d_btn, t_btn, w_btn, ti_btn, s_btn, tt_btn, c_btn;
         public MainPage()
         {
             e_btn = new Button()
@@ -40,7 +40,23 @@ namespace Xamarin_Elemendid
             w_btn = new Button() { Text = "WebView", BorderWidth = 3, BorderColor = Color.DarkBlue, BackgroundColor = Color.LightBlue,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
             };
-            ti_btn = new Button() { Text="Timer", BorderWidth = 3, BorderColor = Color.DarkBlue, BackgroundColor = Color.LightBlue,
+            ti_btn = new Button() { Text="Speaker", BorderWidth = 3, BorderColor = Color.DarkBlue, BackgroundColor = Color.LightBlue,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+            };
+            tt_btn = new Button()
+            {
+                Text = "Timer",
+                BorderWidth = 3,
+                BorderColor = Color.DarkBlue,
+                BackgroundColor = Color.LightBlue,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
+            };
+            c_btn = new Button()
+            {
+                Text = "Cards",
+                BorderWidth = 3,
+                BorderColor = Color.DarkBlue,
+                BackgroundColor = Color.LightBlue,
                 FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Button))
             };
             e_btn.Clicked += E_btn_Clicked;
@@ -50,15 +66,29 @@ namespace Xamarin_Elemendid
             w_btn.Clicked += W_btn_Clicked;
             ti_btn.Clicked += Ti_btn_Clicked;
             s_btn.Clicked += S_btn_Clicked;
+            tt_btn.Clicked += Tt_btn_Clicked;
+            c_btn.Clicked += C_btn_Clicked;
             StackLayout stack = new StackLayout(); 
             stack.Children.Add(e_btn);
+            stack.Children.Add(c_btn);
             stack.Children.Add(l_btn);
             stack.Children.Add(d_btn);
             stack.Children.Add(ti_btn);
             stack.Children.Add(t_btn);
             stack.Children.Add(w_btn);
             stack.Children.Add(s_btn);
+            stack.Children.Add(tt_btn);
             Content = stack;
+        }
+
+        private async void C_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new cards());
+        }
+
+        private async void Tt_btn_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new textToSpeech());
         }
 
         private async void S_btn_Clicked(object sender, EventArgs e)
